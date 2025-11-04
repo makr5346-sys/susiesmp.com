@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SusieSMP - Minecraft Shulker Boxes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Body and background */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://static.planetminecraft.com/files/resource_media/screenshot/1751/nllcnux-1513916142.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-y: auto;
+            /* Enables vertical scrolling */
+            height: 100%;
+            /* Ensures the body takes full height */
+        }
+
+        /* Container for central content */
+        .container {
+            text-align: center;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 20px;
+        }
+
+        /* Typing animation for "Welcome to SuSieSMP" */
+        .welcome-text {
+            font-size: 3rem;
+            margin-bottom: 30px;
+            color: white;
+            font-weight: 600;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 4px solid pink;
+            width: 0;
+            animation: typing 4s steps(40) 1s forwards, blink 0.75s step-end infinite;
+        }
+
+        /* Animation for typing effect */
+        @keyframes typing {
+            from {
+                width: 0;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+
+        /* Animation for blinking cursor */
+        @keyframes blink {
+            50% {
+                border-color: transparent;
+            }
+        }
+
+        /* Rank list section */
+        .rank-list-header {
+            color: pink;
+            font-size: 2rem;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        /* Shulker box styles */
+        .rank-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .shulker-box {
+            width: 150px;
+            height: 200px;
+            padding-top: 20px;
+            background-color: #444;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            position: relative;
+            transition: transform 0.3s ease-in-out;
+            /* Smooth zoom-out transition */
+        }
+
+        .shulker-box img {
+            width: 120px;
+            height: 120px;
+        }
+
+        .yellow {
+            background-color: #FFD700;
+        }
+
+        .red {
+            background-color: #FF6347;
+        }
+
+        .lime {
+            background-color: #32CD32;
+        }
+
+        .light-blue {
+            background-color: #ADD8E6;
+        }
+
+        .blue {
+            background-color: #1E90FF;
+        }
+
+        .gray {
+            background-color: #D3D3D3;
+        }
+
+        .shulker-box h3 {
+            font-size: 1.5rem;
+            margin: 10px 0;
+        }
+
+        .shulker-box p {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* Zoom-out effect on hover */
+        .shulker-box:hover {
+            transform: scale(0.9);
+            /* Shrinks the box on hover */
+        }
+
+        /* Purchase buttons */
+        .buttons {
+            margin-top: 50px;
+        }
+
+        .buttons button {
+            background-color: lime;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s;
+        }
+
+        .buttons button:hover {
+            background-color: #32CD32;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            font-size: 1rem;
+            color: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Typing welcome text -->
+        <div class="welcome-text">Welcome to SuSieSMP</div>
+
+        <!-- Rank List Header -->
+        <div class="rank-list-header">Rank List</div>
+
+        <!-- Rank List (Line 1) -->
+        <div class="rank-list">
+            <div class="shulker-box yellow">
+                <img src="https://minecraft.wiki/images/thumb/Yellow_Shulker_Box_JE2_BE2.png/150px-Yellow_Shulker_Box_JE2_BE2.png?91dbb"
+                    alt="VIP">
+                <h3>VIP</h3>
+                <p>$5</p>
+            </div>
+            <div class="shulker-box red">
+                <img src="https://minecraft.wiki/images/thumb/Red_Shulker_Box_JE2_BE2.png/240px-Red_Shulker_Box_JE2_BE2.png?f7e33"
+                    alt="MVP">
+                <h3>MVP</h3>
+                <p>$10</p>
+            </div>
+            <div class="shulker-box lime">
+                <img src="https://minecraft.wiki/images/thumb/Lime_Shulker_Box_JE2_BE2.png/150px-Lime_Shulker_Box_JE2_BE2.png?595bd"
+                    alt="SPECIAL">
+                <h3>SPECIAL</h3>
+                <p>$15</p>
+            </div>
+        </div>
+
+        <!-- Rank List (Line 2) -->
+        <div class="rank-list">
+            <div class="shulker-box light-blue">
+                <img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/d/db/Light_Blue_Shulker_Box_Revision_1.png?version=aadf6dad307f32dd14dd91995bd2847e"
+                    alt="SUSIE">
+                <h3>SUSIE</h3>
+                <p>$20</p>
+            </div>
+            <div class="shulker-box blue">
+                <img src="https://gamepedia.cursecdn.com/minecraft_gamepedia/e/e9/Blue_Shulker_Box.png?version=16d51bea5e2244d62700fb8cdbcef95e"
+                    alt="INFINITY">
+                <h3>INFINITY</h3>
+                <p>$30</p>
+            </div>
+            <div class="shulker-box gray">
+                <img src="https://minecraft-max.net/upload/iblock/b41/b41daafe7a5a016a987fa12689fb6d88.png"
+                    alt="GRAVITY">
+                <h3>GRAVITY</h3>
+                <p>$50</p>
+            </div>
+        </div>
+
+        <!-- Purchase Buttons -->
+        <div class="buttons">
+            <button class="vip-button" onclick="window.location.href='https://t.me/ItmeGuts'">VIP $5</button>
+            <button class="mvp-button" onclick="window.location.href='https://t.me/ItmeGuts'">MVP $10</button>
+            <button class="special-button" onclick="window.location.href='https://t.me/ItmeGuts'">SPECIAL $15</button>
+            <button class="susie-button" onclick="window.location.href='https://t.me/ItmeGuts'">SUSIE $20</button>
+            <button class="infinity-button" onclick="window.location.href='https://t.me/ItmeGuts'">INFINITY $30</button>
+            <button class="gravity-button" onclick="window.location.href='https://t.me/ItmeGuts'">GRAVITY $50</button>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 SusieSMP - All Rights Reserved</p>
+    </footer>
+</body>
+
+</html>
