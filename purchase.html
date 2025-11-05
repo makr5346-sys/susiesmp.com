@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase Rank - SusieSMP</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('https://cdn.discordapp.com/attachments/1392475102129426512/1435656300175425647/photo_2025-11-05_22-45-15.jpg?ex=690cc29f&is=690b711f&hm=3a635b80dfcaf218270428587180df6264885c76f83277410a4281a3019986a9');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 40px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            color: pink;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-size: 1.2rem;
+            margin-top: 15px;
+            text-align: left;
+        }
+
+        input,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        button {
+            margin-top: 25px;
+            background-color: lime;
+            color: black;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+
+        button:disabled {
+            background-color: grey;
+            cursor: not-allowed;
+        }
+
+        button:hover:not(:disabled) {
+            background-color: #32CD32;
+        }
+
+        .note {
+            margin-top: 30px;
+            color: yellow;
+            font-weight: bold;
+        }
+
+        .icons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .icons img {
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .icons img:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>សូមបំពេញវាទាំងអស់ 🙏❤️</h2>
+
+        <form id="rankForm">
+            <label for="name">First Name:</label>
+            <input type="text" id="name" name="name" placeholder="បំពេញឈ្មោះ" required>
+
+            <label for="rank">Rank:</label>
+            <select id="rank" name="rank" required>
+                <option value="">Choose Rank</option>
+                <option value="VIP">VIP</option>
+                <option value="MVP">MVP</option>
+                <option value="SPECIAL">SPECIAL</option>
+                <option value="SUSIE">SUSIE</option>
+                <option value="INFINITY">INFINITY</option>
+                <option value="GRAVITY">GRAVITY</option>
+            </select>
+
+            <button type="submit" id="submitBtn" disabled>Submit</button>
+        </form>
+
+        <div class="note">
+            If Have Any Problem please Contact To Me
+        </div>
+
+        <div class="icons">
+            <a href="https://t.me/ItmeGuts" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg" alt="Telegram">
+            </a>
+
+            <a href="https://t.me/+QpaKpZwwjyw2Y2Vl" target="_blank">
+                <img src="https://cdn.discordapp.com/attachments/1392475102129426512/1435656300175425647/photo_2025-11-05_22-45-15.jpg?ex=690cc29f&is=690b711f&hm=3a635b80dfcaf218270428587180df6264885c76f83277410a4281a3019986a9" alt="ABA">
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const nameInput = document.getElementById('name');
+        const rankSelect = document.getElementById('rank');
+        const submitBtn = document.getElementById('submitBtn');
+
+        function checkForm() {
+            submitBtn.disabled = !(nameInput.value.trim() && rankSelect.value);
+        }
+
+        nameInput.addEventListener('input', checkForm);
+        rankSelect.addEventListener('change', checkForm);
+
+        document.getElementById('rankForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = encodeURIComponent(nameInput.value);
+            const rank = encodeURIComponent(rankSelect.value)// Send data to your server (replace with your endpoint)
+            fetch('https://your-server.com/save_purchase', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, rank })
+            });
+
+            // Redirect to ABA or TrueMoney payment (replace with your actual payment link)
+            window.location.href = 'https://pay.ababank.com/oRF8/n51es1fc';
+        });
+          </script>
+</body>
+
+</html>
